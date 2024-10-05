@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 6fr 100px;
+    grid-template-areas: 
+    "nav"
+    "principal"
+    "pie";
+    height: 100vh;
+    
+}
+
+header img {
+    display: none;
+}
+
+nav {
+    grid-area: nav;
+    background-color: rgb(142, 124, 30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    height: 400px;
+}
+
+nav h2 {
+    padding-top: 10px;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+    text-align: center;
+    padding: 5px 5px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo img {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 80px;
+}
+
+/**MAIN-CARD MOVIL**/
+
+
+
+h2 {
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(75, 72, 11);
+}
+
+.principal {
+    grid-area: principal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 90px 40px;
+    padding-top: 200px;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    
+}
+
+.card:hover {
+    transform: translateY(-20px);
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-contenido {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-contenido h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: rgb(146, 133, 16);
+    border-radius: 3px;
+    color: white;
+    padding: 8px 16px ;
+    border: none;
+}
+
+
+footer {
+    grid-area: pie;
+    background-color: rgb(59, 54, 34);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+footer, .redes {
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+
+@media  (width:467px){
+    .container {
+        display: grid;
+        grid-template-columns: 40% 1fr 1fr;
+        grid-template-rows: 6fr 6fr 6fr 1fr;
+        grid-template-areas: 
+        "nav principal principal"
+        "nav principal principal"
+        "nav principal principal"
+        "pie pie pie";
+        margin-bottom: 400px;
+        
+    }
+
+    nav {
+        display: block;
+        height: 100vh;
+        border: 1px solid;
+    }
+
+ 
+    nav h2 {
+        margin-top: 20px;
+        padding-top: 10px;
+        color: white;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    ul li {
+        margin-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .logo img {
+        margin-top: 20px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .principal {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        margin-top: 50px;
+    }
+
+    .principal h2 {
+        text-align: center;
+    }
+
+    .card {
+        width: 200px;
+        height: 300px;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 100px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+ 
+}
+
+
+@media  (min-width:600px){
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 6fr 6fr 6fr 1fr;
+        grid-template-areas: 
+        "nav principal principal principal"
+        "nav principal principal principal"
+        "nav principal principal principal"
+        "pie pie pie pie";
+          
+    }
+
+    .principal {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-height: 100%;
+        column-gap: 50px;
+        padding:  55px 25px;
+        margin-bottom: 100px;
+    }
+
+    footer {
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
